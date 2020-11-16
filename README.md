@@ -1,2 +1,2 @@
 # Sql
-SQL queries
+Sql query snippts 
