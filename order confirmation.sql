@@ -4,7 +4,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /*** This query creates a View called PET_LAMINATECONFIRMATION.
-The orignal process is to pull  3 different  tables from  the sql server to an excel workbook and upate formulas  on a daily basis to report new order confirmation to relvent people. 
+The orignal process is to pull  3 different  tables from  the sql server to an excel workbook and upate formulas  on a daily basis to report new orders confirmation to relvent people. 
 below query  simplies the day to day manual operation. ***/
 
 
