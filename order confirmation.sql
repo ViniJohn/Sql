@@ -5,7 +5,7 @@ GO
 
 /*** This query creates a View called PET_LAMINATECONFIRMATION.
 The orignal process is to pull  3 different  tables from  the sql server to an excel workbook and upate formulas to on a daily basis to report the excel sheet 
-below query is simplies the day to day manual operation ***/
+below query is simplies the day to day manual operation. ***/
 
 
 CREATE View [dbo].[PET_LAMINATECONFIRMATION] AS
