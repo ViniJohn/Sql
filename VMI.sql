@@ -1,4 +1,7 @@
 CREATE View PET_VMI as 
+/****
+This Query creates a view To get the newly uploaded orders to syetem and assign the orders to the corresponding Machines as per the techincal manual. 
+****/
 SELECT Material,Schdate AS Duedate,[AISA2],[AISA5], [AISA6] , [LT01] , [LT02],[LT03],[LT04],[LT05],[LT06],[LT07],[LT08],[CHECK] from(
 
 select convert(bigint,INC_COOIS.[order])as PWO ,
@@ -46,4 +49,4 @@ pivot
              MAX(PWO) 
              for Machine 
              in ([AISA2], [AISA5], [AISA6] , [LT01] , [LT02],[LT03],[LT04],[LT05],[LT06],[LT07],[LT08],[CHECK] )
-       ) as PPP order by Material,Schdate ASC
+       ) as PPP 
