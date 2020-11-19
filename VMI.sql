@@ -1,8 +1,24 @@
-CREATE View PET_VMI as 
+ALTER View PET_VMI as 
 /****
 This Query creates a view To get the newly uploaded orders to syetem and assign the orders to the corresponding Machines as per the techincal manual. 
 ****/
-SELECT Material,Schdate AS Duedate,[AISA2],[AISA5], [AISA6] , [LT01] , [LT02],[LT03],[LT04],[LT05],[LT06],[LT07],[LT08],[CHECK] from(
+
+SELECT 
+      case when Machine like 'AISA2' then PWO end as ASIA2,
+      case when Machine like 'AISA5' then PWO end as AISA5,
+      case when Machine like 'AISA6' then PWO end as AISA6,
+      case when Machine like 'LT01' then PWO end as LT01, 
+      case when Machine like 'LT02' then PWO end as LT02,
+      case when Machine like 'LT03' then PWO end as LT03,
+      case when Machine like 'LT04' then PWO end as LT04,
+      case when Machine like 'LT05' then PWO end as LT05, 
+      case when Machine like 'LT06' then PWO end as LT06,
+      case when Machine like 'LT07' then PWO end as LT07,
+      case when Machine like 'LT08' then PWO end as LT08,
+      case when Machine like 'CHECK' then PWO end as [CHECK]  
+
+From(
+
 
 select convert(bigint,INC_COOIS.[order])as PWO ,
         convert(Date, concat(SUBSTRING(INC_COOIS.SchedStart,1,2),'/',SUBSTRING(INC_COOIS.SchedStart,4,2),
@@ -44,9 +60,3 @@ where
     and INC_COOIS.[Order] like '9%'
 
 ) VMI
-pivot 
-       (
-             MAX(PWO) 
-             for Machine 
-             in ([AISA2], [AISA5], [AISA6] , [LT01] , [LT02],[LT03],[LT04],[LT05],[LT06],[LT07],[LT08],[CHECK] )
-       ) as PPP 
