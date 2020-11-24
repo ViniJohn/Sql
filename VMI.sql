@@ -3,19 +3,20 @@ ALTER View PET_VMI as
 This Query creates a view To get the newly uploaded orders to syetem and assign the orders to the corresponding Machines as per the techincal manual. 
 ****/
 
-SELECT 
+SELECT PWO,Material,
       case when Machine like 'AISA2' then PWO end as ASIA2,
       case when Machine like 'AISA5' then PWO end as AISA5,
       case when Machine like 'AISA6' then PWO end as AISA6,
       case when Machine like 'LT01' then PWO end as LT01, 
       case when Machine like 'LT02' then PWO end as LT02,
+      Case when Machine Like 'ALL_LT250' then PWO end as ALL_LT250,
       case when Machine like 'LT03' then PWO end as LT03,
       case when Machine like 'LT04' then PWO end as LT04,
       case when Machine like 'LT05' then PWO end as LT05, 
       case when Machine like 'LT06' then PWO end as LT06,
       case when Machine like 'LT07' then PWO end as LT07,
       case when Machine like 'LT08' then PWO end as LT08,
-      case when Machine like 'CHECK' then PWO end as [CHECK]  
+            case when Machine like 'CHECK' then PWO end as [CHECK]  
 
 From(
 
