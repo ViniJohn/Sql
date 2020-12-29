@@ -1,7 +1,7 @@
 
 --Creating a view to simpily excel reporting/ automating copy past. Previous process was Manual copy pasting on a daily basis (min 50 records a day). 
-CREATE VIEW  PET_LAMD AS 
-SELECT  CONCAT(Track,Material) AS string,Track,Material, NUll AS matdesc,Material2, null AS matdesc2, Mat2Use AS uniqueid,Lami_with,Dia FROM 
+ALTER VIEW  PET_LAMD AS 
+SELECT  CONCAT(Track,Material) AS string,Track,Material, NUll AS matdesc,Material2, null AS matdesc2, Mat2Use AS uniqueid,Lami_with,Dia,Track AS DupTrack FROM 
 
    (SELECT distinct Temp1.*, ROUND((Temp1.Lami_with)/(PI()*2*(Temp1.Dia/2)),0) AS Track  FROM (
 
