@@ -42,7 +42,7 @@ SELECT
       ,[Remarks]
       ,[SOType]
   FROM [epp_planning].[dbo].[INC_ZSOBOOK]
--- Distinct class could  be used on the select statment but  I want to try conveterting the column names into single row with comma sepreated values in a single row 
+-- Distinct class could  be used on the select statment but  I want to try conveterting the column names into single row with comma sepreated values  
 /*select COLUMN_NAME+',' as 'data()' from INFORMATION_SCHEMA.COLUMNS
 where TABLE_NAME = 'INC_ZSOBOOK'
 for XML PATH('')*/
@@ -77,4 +77,3 @@ where RID BETWEEN '2020-12-01' and '2020-12-31'
 and Division = 10
 GROUP by SO,Sold2PName,Sold2P,PODoc_Date,SODoc_Date, SOReq_Date,SODue_Date
 */
-
